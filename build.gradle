@@ -1,0 +1,24 @@
+group 'serban'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.16.18'
+
+    compile "com.squareup.retrofit2:retrofit:2.3.0"
+    compile "com.squareup.retrofit2:converter-jackson:2.3.0"
+
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.8.0'
+    testCompile 'org.mockito:mockito-all:1.10.19'
+
+}
