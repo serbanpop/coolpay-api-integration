@@ -10,16 +10,14 @@ import retrofit2.http.POST;
 
 import java.io.IOException;
 
+import static com.currencycloud.integration.PropertiesProvider.get;
 import static com.currencycloud.rest.RetrofitFactory.retrofit;
 
 public class LoginClient {
 
-    private static final String USERNAME = "SherbanP";
-    private static final String API_KEY = "FFE44382E8AFA95F";
-
     public Response<TokenResponse> login() throws IOException {
         return client()
-                .login(new TokenRequest(USERNAME, API_KEY))
+                .login(new TokenRequest(get("coolpay.username"), get("coolpay.apikey")))
                 .execute();
     }
 

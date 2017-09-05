@@ -5,7 +5,7 @@ import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-import static com.currencycloud.Constants.BASE_URL;
+import static com.currencycloud.integration.PropertiesProvider.get;
 
 public class RetrofitFactory {
 
@@ -29,7 +29,7 @@ public class RetrofitFactory {
 
     private static Retrofit.Builder builder() {
         return new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(get("coolpay.url.base"))
                 .addConverterFactory(JacksonConverterFactory.create());
     }
 
